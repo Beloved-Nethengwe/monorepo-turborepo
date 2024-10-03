@@ -9,12 +9,12 @@ const NavBar = () => {
       <ul className="nav-links">
         <li>
         <Link href="/">
-                        Sign Register
+          Sign Register
         </Link>
         </li>
         <li>
         <Link href="/todaysregister">
-        View Todays Register
+            View Todays Register
         </Link>
         </li>
         <li>

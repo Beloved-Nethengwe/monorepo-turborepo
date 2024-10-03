@@ -3,6 +3,15 @@ import localFont from "next/font/local";
 import "./globals.css";
 import "@repo/ui/globals.css";
 
+import Link from 'next/link'
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  navigationMenuTriggerStyle,
+} from '@repo/ui/components/ui/navigation-menu'
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -25,6 +34,36 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <nav className="navbar">
+        <NavigationMenu>
+          <NavigationMenuList>
+
+          <NavigationMenuItem className = "navbar1">
+              <Link href="/" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  Sign Register
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem className = "navbar1">
+              <Link href="/todaysregister" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  View Todays Register
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+
+            <NavigationMenuItem className = "navbar1">
+              <Link href="/historyofregister" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                History Of Register
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
+      </nav>
         {children}
       </body>
     </html>
