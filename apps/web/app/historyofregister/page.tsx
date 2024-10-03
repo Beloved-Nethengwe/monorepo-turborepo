@@ -26,9 +26,9 @@ const RegisterHistory = () => {
     if (userDataList.length > 0) {
     
       const grouped = userDataList.reduce<Record<string, UserData[]>>((acc, user) => {
-        const date = user.currentDate.split('T')[0]; 
+        const date = user.currentDate.split('T')[0]; // Split to get the date part
         if (date) { // Ensure date is defined
-          if (!acc[date]) acc[date] = []; // Initialize the array if it doesn't exist
+          acc[date] = acc[date] || []; // Initialize the array if it doesn't exist
           acc[date].push(user); // Push the user to the corresponding date array
         }
         return acc;
