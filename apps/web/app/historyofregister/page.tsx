@@ -54,8 +54,8 @@ const RegisterHistory = () => {
 
   // Pagination logic
   const usersToDisplay = currentDate && groupedData[currentDate] ? groupedData[currentDate] : [];
-  const totalPages = Math.ceil(usersToDisplay?.length ?? 0 / itemsPerPage);
-  const displayedUsers = usersToDisplay.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+  const totalPages = Math.ceil((usersToDisplay?.length ?? 0) / itemsPerPage); // Parentheses added
+  const displayedUsers = (usersToDisplay ?? []).slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);  
 
   return (
     <div>
