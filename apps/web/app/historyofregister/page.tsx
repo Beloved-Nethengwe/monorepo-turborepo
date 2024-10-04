@@ -1,5 +1,4 @@
 'use client';
-import NavBar from "@repo/ui/components/ui/NavBar";
 import { useEffect, useState } from 'react';
 
 interface UserData {
@@ -20,6 +19,7 @@ const RegisterHistory = () => {
     const storedData = localStorage.getItem("userData");
     const existingData = storedData ? JSON.parse(storedData) : [];
     setUserDataList(existingData);
+    
   }, []);
 
   useEffect(() => {
